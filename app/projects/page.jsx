@@ -1,0 +1,380 @@
+"use client"
+
+import { useState } from "react"
+import { ExternalLink, Github, Code, Palette, Database, Filter } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+
+export default function ProjectsPage() {
+  const [activeFilter, setActiveFilter] = useState("All")
+
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description: "A comprehensive e-commerce solution with user authentication, product management, shopping cart functionality, payment integration using Stripe, and admin dashboard for inventory management.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Express", "JWT"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Full Stack",
+      featured: true,
+      status: "Completed"
+    },
+    {
+      title: "Task Management Dashboard",
+      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, team collaboration features, file attachments, and progress tracking.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["React", "Firebase", "Tailwind CSS", "Framer Motion", "React DnD"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Frontend",
+      featured: true,
+      status: "Completed"
+    },
+    {
+      title: "Weather Analytics Dashboard",
+      description: "An interactive weather dashboard displaying current conditions, 7-day forecasts, weather maps, historical data analysis, and location-based weather alerts.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["JavaScript", "Chart.js", "OpenWeather API", "CSS3", "Local Storage"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Frontend",
+      featured: false,
+      status: "Completed"
+    },
+    {
+      title: "Personal Portfolio Website",
+      description: "A responsive portfolio website showcasing projects, skills, and experience with smooth animations, dark mode support, and contact form integration.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "GSAP", "EmailJS"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Frontend",
+      featured: false,
+      status: "Completed"
+    },
+    {
+      title: "Blog Content Management System",
+      description: "A modern blog platform with rich text editor, user authentication, comment system, social sharing, SEO optimization, and analytics dashboard.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Next.js", "Prisma", "PostgreSQL", "NextAuth", "TinyMCE"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Full Stack",
+      featured: true,
+      status: "In Progress"
+    },
+    {
+      title: "Recipe Discovery App",
+      description: "A recipe finder application with advanced search filters, meal planning, nutritional information, shopping list generation, and user recipe collections.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["React", "Spoonacular API", "Local Storage", "Bootstrap", "React Router"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Frontend",
+      featured: false,
+      status: "Completed"
+    },
+    {
+      title: "Real-time Chat Application",
+      description: "A modern chat application with real-time messaging, file sharing, group chats, emoji support, message encryption, and user presence indicators.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "Express"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Full Stack",
+      featured: false,
+      status: "In Progress"
+    },
+    {
+      title: "Expense Tracker Mobile App",
+      description: "A mobile-first expense tracking application with budget management, category-wise spending analysis, receipt scanning, and financial goal setting.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["React Native", "Firebase", "Chart.js", "AsyncStorage"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Mobile",
+      featured: false,
+      status: "Completed"
+    },
+    {
+      title: "Learning Management System",
+      description: "An educational platform with course management, video streaming, quiz system, progress tracking, and student-teacher interaction features.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Next.js", "Prisma", "PostgreSQL", "AWS S3", "Stripe"],
+      liveUrl: "#",
+      githubUrl: "#",
+      category: "Full Stack",
+      featured: true,
+      status: "In Progress"
+    }
+  ]
+
+  const categories = ["All", "Full Stack", "Frontend", "Mobile"]
+  
+  const filteredProjects = activeFilter === "All" 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter)
+
+  const featuredProjects = projects.filter(project => project.featured)
+
+  const getCategoryIcon = (category) => {
+    switch (category) {
+      case "Full Stack":
+        return Database
+      case "Frontend":
+        return Palette
+      case "Mobile":
+        return Code
+      default:
+        return Code
+    }
+  }
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Completed":
+        return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300"
+      case "In Progress":
+        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300"
+      default:
+        return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300"
+    }
+  }
+
+  return (
+    <div className="min-h-screen py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fadeInUp">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">My Projects</span>
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            A showcase of my development journey, featuring web applications, mobile apps, and full-stack solutions 
+            that demonstrate my technical skills and creative problem-solving abilities.
+          </p>
+        </div>
+
+        {/* Featured Projects */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
+            <span className="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded-full mr-3"></span>
+            Featured Projects
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {featuredProjects.slice(0, 4).map((project, index) => {
+              const CategoryIcon = getCategoryIcon(project.category)
+              return (
+                <div
+                  key={project.title}
+                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-105"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                        Featured
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <div className="flex items-center bg-white dark:bg-gray-800 rounded-full px-3 py-1 shadow-lg">
+                        <CategoryIcon className="w-4 h-4 text-purple-500 mr-1" />
+                        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{project.category}</span>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-4 right-4">
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
+                        {project.status}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">{project.description}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 text-pink-700 dark:text-pink-300 text-xs rounded-full font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex space-x-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 border-pink-200 hover:bg-pink-50 dark:border-pink-800 dark:hover:bg-pink-900/20"
+                        asChild
+                      >
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-900/20"
+                        asChild
+                      >
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex items-center mb-4">
+            <Filter className="w-5 h-5 text-gray-600 dark:text-gray-300 mr-2" />
+            <span className="text-gray-600 dark:text-gray-300 font-medium">Filter by category:</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveFilter(category)}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  activeFilter === category
+                    ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* All Projects */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
+            <span className="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded-full mr-3"></span>
+            All Projects ({filteredProjects.length})
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => {
+              const CategoryIcon = getCategoryIcon(project.category)
+              return (
+                <div
+                  key={project.title}
+                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-105"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <div className="flex items-center bg-white dark:bg-gray-800 rounded-full px-3 py-1 shadow-lg">
+                        <CategoryIcon className="w-4 h-4 text-purple-500 mr-1" />
+                        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{project.category}</span>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-4 right-4">
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
+                        {project.status}
+                      </span>
+                    </div>
+                    {project.featured && (
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          Featured
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">{project.description}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 text-pink-700 dark:text-pink-300 text-xs rounded-full font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-full font-medium">
+                          +{project.technologies.length - 3} more
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex space-x-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 border-pink-200 hover:bg-pink-50 dark:border-pink-800 dark:hover:bg-pink-900/20"
+                        asChild
+                      >
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Demo
+                        </a>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-900/20"
+                        asChild
+                      >
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center animate-fadeInUp">
+          <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Want to see more of my work?</h3>
+            <p className="mb-6 opacity-90">
+              Check out my GitHub profile for more projects, contributions, and code samples.
+            </p>
+            <Button
+              variant="secondary"
+              className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              asChild
+            >
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5 mr-2" />
+                View All Projects on GitHub
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
