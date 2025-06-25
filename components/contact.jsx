@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, Twitter } from "lucide-react"
-import  Button  from "@/components/ui/button"
+import  {Button}  from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, Twitter, MessageCircle, Calendar, Clock } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import {Button} from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 

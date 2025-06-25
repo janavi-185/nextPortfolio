@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { gsap } from "gsap"
 import { ArrowDown, Github, Linkedin, Instagram } from "lucide-react"
-import  Button  from "@/components/ui/button"
+import  {Button}  from "@/components/ui/button"
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -15,7 +15,7 @@ export default function Hero() {
 
     tl.from(textRef.current.children, {
       y: 100,
-      opacity: 0,
+      opacity: 1,
       duration: 1,
       stagger: 0.2,
       ease: "power3.out",
@@ -30,7 +30,7 @@ export default function Hero() {
     <section ref={heroRef} className="min-h-screen flex items-center justify-center pt-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <div ref={textRef}>
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -39,7 +39,7 @@ export default function Hero() {
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
               JC
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 bg-clip-text text-transparent">

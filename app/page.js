@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
-      <QuickOverview />
+      {/* <QuickOverview /> */}
     </div>
   )
 }

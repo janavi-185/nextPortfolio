@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { useTheme } from "next-themes"
-import Button from "@/components/ui/button"
+import {Button} from "@/components/ui/button"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { ExternalLink, Github, Code, Palette, Database } from "lucide-react"
-import Button from "@/components/ui/button"
+import {Button} from "@/components/ui/button"
 
 export default function Projects() {
   const ref = useRef(null)
