@@ -3,32 +3,33 @@
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { gsap } from "gsap"
-import { ArrowDown, Github, Linkedin, Instagram } from "lucide-react"
+import {  Github, Linkedin, Instagram } from "lucide-react"
 import  {Button}  from "@/components/ui/button"
 
 export default function Hero() {
   const heroRef = useRef(null)
   const textRef = useRef(null)
 
-  useEffect(() => {
-    const tl = gsap.timeline()
+  // useEffect(() => {
+  //   const tl = gsap.timeline()
 
-    tl.from(textRef.current.children, {
-      y: 100,
-      opacity: 1,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-    })
-  }, [])
+  //   tl.from(textRef.current.children, {
+  //     y: 100,
+  //     opacity: 1,
+  //     duration: 1,
+  //     stagger: 0.2,
+  //     ease: "power3.out",
+  //   })
+  // }, [])
 
   const scrollToAbout = () => {
     document.querySelector("#about").scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center pt-16 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <section ref={heroRef} className="h-screen flex items-center justify-center ">
+      
+      <div className="max-w-4xl text-center">
         <div ref={textRef}>
           {/* <motion.div
             initial={{ scale: 0 }}
@@ -51,12 +52,12 @@ export default function Hero() {
             B.Tech Student & Aspiring Developer
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl  leading-relaxed">
             Passionate about creating beautiful and functional web experiences. Currently in my 3rd year of B.Tech,
             exploring the world of technology and innovation.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-[30px]">
             <Button
               onClick={scrollToAbout}
               className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
@@ -64,8 +65,9 @@ export default function Hero() {
               Explore My Work
             </Button>
 
+
             <div className="flex space-x-4">
-              <motion.a
+              <a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://github.com"
@@ -74,8 +76,8 @@ export default function Hero() {
                 className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
               >
                 <Github className="w-6 h-6" />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://linkedin.com"
@@ -84,8 +86,8 @@ export default function Hero() {
                 className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://instagram.com"
@@ -94,18 +96,18 @@ export default function Hero() {
                 className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
-              </motion.a>
+              </a>
             </div>
           </div>
 
-          <motion.div
+          {/* <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             className="cursor-pointer"
             onClick={scrollToAbout}
           >
             <ArrowDown className="w-8 h-8 mx-auto text-pink-500 dark:text-pink-400" />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
