@@ -5,7 +5,13 @@
   font-family: 'Gill Sans MT';
 }
 
-.bg-light{
+.dark {
+  --background: #1f49a3;  
+  --foreground: #f9fafb;  
+  --accent: #f472b6;      
+}
+
+/* .bg-light{
   @apply bg-[#F8F8F8];
 }
 
@@ -18,4 +24,4 @@
 }
 .darktext{
   @apply text-pink-400;
-}
+} */

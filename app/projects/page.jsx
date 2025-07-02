@@ -167,7 +167,7 @@ export default function ProjectsPage() {
               return (
                 <div
                   key={project.title}
-                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-105"
+                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-101"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="relative overflow-hidden">
@@ -275,7 +275,7 @@ export default function ProjectsPage() {
               return (
                 <div
                   key={project.title}
-                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-105"
+                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-101"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="relative overflow-hidden">
