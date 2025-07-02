@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { motion } from "framer-motion"
-import { gsap } from "gsap"
 import {  Github, Linkedin, Instagram } from "lucide-react"
 import  {Button}  from "@/components/ui/button"
 
@@ -14,7 +12,7 @@ export default function Hero() {
   //   const tl = gsap.timeline()
 
   //   tl.from(textRef.current.children, {
-  //     y: 100,
+  //     y: 100,x
   //     opacity: 1,
   //     duration: 1,
   //     stagger: 0.2,
@@ -29,7 +27,7 @@ export default function Hero() {
   return (
     <section ref={heroRef} className="h-screen flex items-center justify-center ">
       
-      <div className="max-w-4xl text-center">
+      <div className="w-full">
         <div ref={textRef}>
           {/* <motion.div
             initial={{ scale: 0 }}
@@ -41,14 +39,14 @@ export default function Hero() {
               JC
             </div>
           </motion.div> */}
-
+        <div className="w-[60%] flex flex-col items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-format text-transparent">
               Janavi Chauhan
             </span>
           </h1>
 
-          <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-light">
+          <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300  mb-6 font-light">
             B.Tech Student & Aspiring Developer
           </h2>
 
@@ -60,7 +58,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-[30px]">
             <Button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-l from-[#437057] to-[#97B067] hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Explore My Work
             </Button>
@@ -99,6 +97,10 @@ export default function Hero() {
               </a>
             </div>
           </div>
+        </div>
+        <div className="w-[40%]">
+
+        </div>
 
           {/* <motion.div
             animate={{ y: [0, 10, 0] }}

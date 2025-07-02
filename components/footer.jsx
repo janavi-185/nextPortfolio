@@ -14,8 +14,8 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12 px-4">
-      <div className="max-w-6xl mx-auto">
+    <footer className=" py-12 px-4">
+      <div className="max-w-6xl mx-auto p-10 rounded-2xl">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="text-center md:text-left">
@@ -60,7 +60,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 transition-all duration-300"
+                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-green-400 hover:to-green-300 transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />

@@ -31,13 +31,13 @@ export default function Navbar() {
   if (!mounted) return null
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-pink-200 dark:border-purple-800 animate-slideDown">
+    <nav className="fixed top-2 left-10 right-10 z-40 rounded-2xl bg-dark/65 dark:bg-dark/65 backdrop-blur-md border border-gray-300 dark:border-gray-500 animate-slideDown">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 hover:scale-105 transition-transform">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-              JC
+          <Link href="/" className="flex-shrink-0 transition-transform">
+            <h1 className="text-2xl font-bold text-format text-transparent">
+              Janavi Chauhan
             </h1>
           </Link>
 
@@ -48,9 +48,9 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                  className={`px-3 py-2 rounded-xl text-md font-medium transition-all duration-300 hover:scale-105 ${
                     isActive(item.href)
-                      ? "text-pink-500 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20"
+                      ? "text-green-800 dark:text-pink-400 bg-green-50 dark:bg-green-900/20"
                       : "text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400"
                   }`}
                 >
@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
 
           {/* Theme Toggle & Mobile Menu */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center hover:cursor-pointer space-x-2">
             <Button
               variant="ghost"
               size="icon"
@@ -69,6 +69,7 @@ export default function Navbar() {
               className="text-gray-700 dark:text-gray-300"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {console.log("Theme toggled to:", theme)}
             </Button>
 
             {/* Mobile menu button */}
