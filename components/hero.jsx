@@ -95,7 +95,7 @@ export default function Hero() {
               >
                 <Instagram className="w-6 h-6" />
               </a>
-            </div>
+            </div> ~
           </div>
         </div>
         <div className="w-[40%]">

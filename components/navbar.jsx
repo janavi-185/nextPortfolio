@@ -46,7 +46,7 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.name} 
                   href={item.href}
                   className={`px-3 py-2 rounded-xl text-md font-medium transition-all duration-300 hover:scale-105 ${
                     isActive(item.href)

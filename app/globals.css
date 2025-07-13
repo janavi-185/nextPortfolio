@@ -5,11 +5,11 @@
   font-family: 'Gill Sans MT';
 }
 
-.dark {
+/* .dark {
   --background: #1f49a3;  
   --foreground: #f9fafb;  
   --accent: #f472b6;      
-}
+} */
 
 /* .bg-light{
   @apply bg-[#F8F8F8];
@@ -18,10 +18,10 @@
 .bg-dark{
   @apply bg-[#1F2937];
 }
-
+*/
 .text-format{
-  @apply bg-gradient-to-r from-[#437057] to-[#97B067] bg-clip-text;
+  @apply bg-gradient-to-l from-[#335141] to-[#97B067] bg-clip-text;
 }
 .darktext{
   @apply text-pink-400;
-} */
+} 
