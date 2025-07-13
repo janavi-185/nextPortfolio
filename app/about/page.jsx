@@ -1,74 +1,10 @@
 "use client"
 
-import { Code, Palette, Database, Globe, Award, BookOpen, User, Heart } from 'lucide-react'
+import { Code,  Award, BookOpen, User, Heart } from 'lucide-react'
+import { skills, certifications, interests } from '@/lib/data'
 
 export default function AboutPage() {
-  const skills = [
-    { name: "JavaScript", level: 85, icon: Code },
-    { name: "React", level: 80, icon: Code },
-    { name: "HTML/CSS", level: 90, icon: Palette },
-    { name: "Node.js", level: 75, icon: Database },
-    { name: "Python", level: 70, icon: Code },
-    { name: "Web Design", level: 85, icon: Globe },
-    { name: "Tailwind CSS", level: 88, icon: Palette },
-    { name: "Next.js", level: 82, icon: Code },
-  ]
-
-  const certifications = [
-    {
-      title: "Web Development Bootcamp",
-      issuer: "Udemy",
-      year: "2023",
-      icon: Globe,
-      description: "Complete full-stack web development course covering HTML, CSS, JavaScript, React, and Node.js"
-    },
-    {
-      title: "JavaScript Algorithms and Data Structures",
-      issuer: "FreeCodeCamp",
-      year: "2023",
-      icon: Code,
-      description: "Comprehensive course on JavaScript fundamentals, ES6, and algorithmic thinking"
-    },
-    {
-      title: "React Development Certification",
-      issuer: "Coursera",
-      year: "2024",
-      icon: Code,
-      description: "Advanced React concepts including hooks, context, and modern React patterns"
-    },
-    {
-      title: "UI/UX Design Fundamentals",
-      issuer: "Google",
-      year: "2024",
-      icon: Palette,
-      description: "User experience design principles, prototyping, and design thinking methodology"
-    },
-    {
-      title: "Responsive Web Design",
-      issuer: "FreeCodeCamp",
-      year: "2023",
-      icon: Palette,
-      description: "Modern CSS techniques, Flexbox, Grid, and mobile-first design principles"
-    },
-    {
-      title: "Git and GitHub Mastery",
-      issuer: "Udemy",
-      year: "2023",
-      icon: Code,
-      description: "Version control, collaboration workflows, and advanced Git techniques"
-    },
-  ]
-
-  const interests = [
-    "Web Development",
-    "UI/UX Design",
-    "Machine Learning",
-    "Mobile App Development",
-    "Open Source Contributing",
-    "Tech Blogging",
-    "Photography",
-    "Digital Art"
-  ]
+  
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -76,7 +12,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fadeInUp">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">About Me</span>
+            <span className="text-format text-transparent">About Me</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Get to know more about my journey, skills, and passion for technology

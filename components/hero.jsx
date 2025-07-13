@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import {  Github, Linkedin, Instagram } from "lucide-react"
 import  {Button}  from "@/components/ui/button"
 
@@ -25,9 +25,9 @@ export default function Hero() {
   }
 
   return (
-    <section ref={heroRef} className="h-screen flex items-center justify-center ">
+    <section ref={heroRef} className="h-screen   flex items-center justify-center ">
       
-      <div className="w-full">
+      <div className="w-[90%]">
         <div ref={textRef}>
           {/* <motion.div
             initial={{ scale: 0 }}
@@ -39,7 +39,7 @@ export default function Hero() {
               JC
             </div>
           </motion.div> */}
-        <div className="w-[60%] flex flex-col items-center justify-center">
+        <div className="w-[100%] flex flex-col items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-format text-transparent">
               Janavi Chauhan
@@ -55,10 +55,10 @@ export default function Hero() {
             exploring the world of technology and innovation.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-[30px]">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-24">
             <Button
               onClick={scrollToAbout}
-              className="bg-gradient-to-l from-[#437057] to-[#97B067] hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-[#437057] to-[#97B067] hover:cursor-pointer text-white px-8 py-4 border hover:border-green-800 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Explore My Work
             </Button>
@@ -68,40 +68,36 @@ export default function Hero() {
               <a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://github.com"
+                href="https://github.com/janavi-185"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/janavi-chauhan-87a611283/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://instagram.com"
+                href="https://www.instagram.com/_janavi.18/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
               </a>
-            </div> ~
+            </div> 
           </div>
         </div>
-        <div className="w-[40%]">
-
-        </div>
-
           {/* <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
