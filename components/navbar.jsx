@@ -106,8 +106,8 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
                     isActive(item.href)
-                      ? "text-green-800 dark:text-pink-400 bg-green-50 dark:bg-pink-900/20"
-                      : "text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-pink-400"
+                      ? "text-green-800 dark:text-pink-400 dark:bg-pink-900/20"
+                      : "text-gray-700 dark:text-gray-300 hover:text-green-800 dark:hover:text-pink-400"
                   }`}
                 >
                   {item.name}

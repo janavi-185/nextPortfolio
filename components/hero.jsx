@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import {  Github, Linkedin, Instagram } from "lucide-react"
 import  {Button}  from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -65,7 +66,7 @@ export default function Hero() {
 
 
             <div className="flex space-x-4">
-              <a
+              <Link
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://github.com/janavi-185"
@@ -74,8 +75,8 @@ export default function Hero() {
                 className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
               >
                 <Github className="w-6 h-6" />
-              </a>
-              <a
+              </Link>
+              <Link
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://www.linkedin.com/in/janavi-chauhan-87a611283/"
@@ -84,8 +85,8 @@ export default function Hero() {
                 className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
-              </a>
-              <a
+              </Link>
+              <Link
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://www.instagram.com/_janavi.18/"
@@ -94,7 +95,7 @@ export default function Hero() {
                 className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
-              </a>
+              </Link>
             </div> 
           </div>
         </div>
