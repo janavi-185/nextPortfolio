@@ -23,7 +23,7 @@ export default function Footer() {
               Janavi Chauhan
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              B.Tech Student & Aspiring Developer passionate about creating beautiful and functional web experiences.
+              B.Tech  Student & Aspiring Developer passionate about creating beautiful and functional web experiences.
             </p>
           </div>
 
