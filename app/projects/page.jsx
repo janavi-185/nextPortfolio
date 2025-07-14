@@ -45,7 +45,7 @@ export default function ProjectsPage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fadeInUp">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">My Projects</span>
+            <span className="text-format text-transparent">My Projects</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             A showcase of my development journey, featuring web applications, mobile apps, and full-stack solutions 
@@ -56,7 +56,7 @@ export default function ProjectsPage() {
         {/* Featured Projects */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
-            <span className="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded-full mr-3"></span>
+            <span className="w-1 h-8 bg-gradient-to-b from-green-500 to-yellow-500 rounded-full mr-3"></span>
             Featured Projects
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
               return (
                 <div
                   key={project.title}
-                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group animate-fadeInUp hover:scale-101"
+                  className="bg-white dark:bg-gray-800 border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-yellow-50 transition-all duration-300 group animate-fadeInUp "
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="relative overflow-hidden">
@@ -75,13 +75,13 @@ export default function ProjectsPage() {
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-gradient-to-r from-green-600 to-green-800 text-white px-3 py-1 rounded-full text-xs font-medium">
                         Featured
                       </span>
                     </div>
                     <div className="absolute top-4 right-4">
                       <div className="flex items-center bg-white dark:bg-gray-800 rounded-full px-3 py-1 shadow-lg">
-                        <CategoryIcon className="w-4 h-4 text-purple-500 mr-1" />
+                        <CategoryIcon className="w-4 h-4 text-yellow-500 mr-1" />
                         <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{project.category}</span>
                       </div>
                     </div>
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 text-pink-700 dark:text-pink-300 text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-gradient-to-r from-green-50 to-green-100  text-green-700  text-xs rounded-full font-medium"
                         >
                           {tech}
                         </span>
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-pink-200 hover:bg-pink-50 dark:border-pink-800 dark:hover:bg-pink-900/20"
+                        className="flex-1 border-yellow-200 hover:bg-yellow-50"
                         asChild
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -122,7 +122,7 @@ export default function ProjectsPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-900/20"
+                        className="flex-1 border-green-200 hover:bg-green-50 "
                         asChild
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">

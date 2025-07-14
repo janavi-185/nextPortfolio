@@ -26,7 +26,7 @@ export default function Hero() {
   }
 
   return (
-    <section ref={heroRef} className="h-screen   flex items-center justify-center ">
+    <section ref={heroRef} className="h-full flex items-center justify-center">
       
       <div className="w-[90%]">
         <div ref={textRef}>
@@ -40,7 +40,7 @@ export default function Hero() {
               JC
             </div>
           </motion.div> */}
-        <div className="w-[100%] flex flex-col items-center justify-center">
+        <div className="w-[100%] flex flex-col items-center justify-center mt-40">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-format text-transparent">
               Janavi Chauhan
