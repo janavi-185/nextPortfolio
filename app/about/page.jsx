@@ -146,7 +146,7 @@ export default function AboutPage() {
         {/* Interests & Hobbies */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl animate-fadeInUp hover:shadow-2xl transition-shadow duration-300">
           <div className="flex items-center mb-6">
-            <Heart className="w-8 h-8 text-pink-500 mr-3" />
+            <Heart className="w-8 h-8 text-green-800 mr-3" />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Interests & Hobbies</h2>
           </div>
           <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
@@ -156,7 +156,7 @@ export default function AboutPage() {
             {interests.map((interest, index) => (
               <div
                 key={interest}
-                className="flex items-center justify-center p-4 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 rounded-xl hover:scale-105 transition-transform duration-300"
+                className="flex items-center justify-center p-4 bg-gradient-to-r from-yellow-5  0 to-yellow-100 dark:from-pink-900/30 dark:to-purple-900/30 rounded-xl hover:scale-105 transition-transform duration-300"
               >
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">{interest}</span>
               </div>

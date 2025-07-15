@@ -151,7 +151,7 @@ export default function ProjectsPage() {
                 onClick={() => setActiveFilter(category)}
                 className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === category
-                    ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg"
+                    ? "bg-gradient-to-r from-green-600 to-yellow-400 text-white shadow-lg"
                     : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                 }`}
               >
@@ -164,7 +164,7 @@ export default function ProjectsPage() {
         {/* All Projects */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
-            <span className="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded-full mr-3"></span>
+            <span className="w-1 h-8 bg-gradient-to-b from-green-500 to-yellow-600 rounded-full mr-3"></span>
             All Projects ({filteredProjects.length})
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -184,7 +184,7 @@ export default function ProjectsPage() {
                     />
                     <div className="absolute top-4 right-4">
                       <div className="flex items-center bg-white dark:bg-gray-800 rounded-full px-3 py-1 shadow-lg">
-                        <CategoryIcon className="w-4 h-4 text-purple-500 mr-1" />
+                        <CategoryIcon className="w-4 h-4 text-yellow-500 mr-1" />
                         <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{project.category}</span>
                       </div>
                     </div>
@@ -195,7 +195,7 @@ export default function ProjectsPage() {
                     </div>
                     {project.featured && (
                       <div className="absolute top-4 left-4">
-                        <span className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-gradient-to-r from-green-500 to-green-700 text-white px-3 py-1 rounded-full text-xs font-medium">
                           Featured
                         </span>
                       </div>
