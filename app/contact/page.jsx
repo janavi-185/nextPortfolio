@@ -136,7 +136,7 @@ export default function ContactPage() {
         {/* Header */}
         <div className="text-center mb-16 animate-fadeInUp">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-format text-transparent">
               Let's Work Together
             </span>
           </h1>
@@ -147,7 +147,7 @@ export default function ContactPage() {
         </div>
 
         {/* Quick Contact Options */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        {/* <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl text-center hover:shadow-2xl transition-shadow duration-300 animate-fadeInUp">
             <MessageCircle className="w-12 h-12 text-pink-500 mx-auto mb-4" />
             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">Quick Chat</h3>
@@ -180,7 +180,7 @@ export default function ContactPage() {
               Usually within 2-4 hours
             </span>
           </div>
-        </div>
+        </div> */}
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Enhanced Contact Form */}
@@ -379,7 +379,7 @@ export default function ContactPage() {
             </div>
 
             {/* Availability Status */}
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white hover:scale-105 transition-transform duration-300">
+            {/* <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white hover:scale-105 transition-transform duration-300">
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-white rounded-full mr-3 animate-pulse"></div>
                 <h3 className="text-xl font-bold">Currently Available</h3>
@@ -391,7 +391,7 @@ export default function ContactPage() {
                 <Clock className="w-4 h-4 mr-2" />
                 <span>Next available: Immediately</span>
               </div>
-            </div>
+            </div> */}
 
             {/* Call to Action */}
             <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-white text-center hover:scale-105 transition-transform duration-300">

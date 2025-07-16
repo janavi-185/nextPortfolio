@@ -47,15 +47,14 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
-                  key={item.name} 
+                  key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 rounded-xl text-md font-medium transition-all duration-300 hover:scale-105 ${
-                    isActive(item.href)
-                      ? "text-green-800  bg-green-50 "
-                      : "text-gray-700 hover:text-green-600 "
+                  className={`relative group px-3 py-2 rounded-xl text-md font-medium transition-all duration-300 hover:scale-105 ${
+                    isActive(item.href) ? "text-green-800 " : "text-gray-700 hover:text-green-800 "
                   }`}
                 >
                   {item.name}
+                  <span className="absolute left-0 bottom-1 w-0 h-0.5 bg-green-800 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               ))}
             </div>
@@ -106,7 +105,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
                     isActive(item.href)
-                      ? "text-green-800 dark:text-pink-400 dark:bg-pink-900/20"
+                      ? "text-green-800 bg-green-50 dark:text-pink-400 dark:bg-pink-900/20"
                       : "text-gray-700 dark:text-gray-300 hover:text-green-800 dark:hover:text-pink-400"
                   }`}
                 >

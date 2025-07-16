@@ -210,7 +210,7 @@ export default function ProjectsPage() {
                       {project.technologies.slice(0, 3).map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 text-pink-700 dark:text-pink-300 text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-gradient-to-r from-green-100 to-yellow-100 dark:from-pink-900/30 dark:to-purple-900/30 text-green-600 dark:text-pink-300 text-xs rounded-full font-medium"
                         >
                           {tech}
                         </span>
@@ -226,7 +226,7 @@ export default function ProjectsPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-pink-200 hover:bg-pink-50 dark:border-pink-800 dark:hover:bg-pink-900/20"
+                        className="flex-1 border-yellow-200 hover:bg-yellow-50 dark:border-pink-800 dark:hover:bg-pink-900/20"
                         asChild
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -237,7 +237,7 @@ export default function ProjectsPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-purple-200 hover:bg-purple-50 dark:border-purple-800 dark:hover:bg-purple-900/20"
+                        className="flex-1 border-green-200 hover:bg-green-50 dark:border-purple-800 dark:hover:bg-purple-900/20"
                         asChild
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -254,7 +254,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center animate-fadeInUp">
+        {/* <div className="text-center animate-fadeInUp">
           <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Want to see more of my work?</h3>
             <p className="mb-6 opacity-90">
@@ -271,7 +271,7 @@ export default function ProjectsPage() {
               </a>
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
