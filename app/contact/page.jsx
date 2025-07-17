@@ -186,7 +186,7 @@ export default function ContactPage() {
           {/* Enhanced Contact Form */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl animate-slideInLeft hover:shadow-2xl transition-shadow duration-300">
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
-              <Send className="w-6 h-6 text-pink-500 mr-3" />
+              <Send className="w-6 h-6 text-green-800 mr-3" />
               Send me a detailed message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -343,7 +343,7 @@ export default function ContactPage() {
                     href={info.href}
                     className="flex items-start p-4 bg-gradient-to-r from-yellow-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-md transition-all duration-300 group hover:scale-101"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-600 to-green-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-300 to-green-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
