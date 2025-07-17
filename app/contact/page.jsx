@@ -77,21 +77,21 @@ export default function ContactPage() {
     {
       icon: Github,
       name: "GitHub",
-      url: "https://github.com",
-      color: "hover:text-gray-900 dark:hover:text-white",
+      url: "https://github.com/janavi-185",
+      color: "hover:text-gray-400",
       description: "Check out my code and contributions"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/janavi-chauhan-87a611283/",
       color: "hover:text-blue-600",
       description: "Connect with me professionally"
     },
     {
       icon: Instagram,
       name: "Instagram",
-      url: "https://instagram.com",
+      url: "https://instagram.com/_janavi.18/",
       color: "hover:text-pink-600",
       description: "Follow my creative journey"
     },
@@ -341,9 +341,9 @@ export default function ContactPage() {
                   <a
                     key={info.title}
                     href={info.href}
-                    className="flex items-start p-4 bg-gradient-to-r from-pink-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-md transition-all duration-300 group hover:scale-105"
+                    className="flex items-start p-4 bg-gradient-to-r from-yellow-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-md transition-all duration-300 group hover:scale-101"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-600 to-green-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -359,19 +359,19 @@ export default function ContactPage() {
             {/* Social Media */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Connect on Social Media</h2>
-              <div className="space-y-4">
+              <div className="space-x-5 flex">
                 {socialLinks.map((social, index) => (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 group hover:scale-105 ${social.color}`}
+                    className={`flex items-center \ p-4 bg-gray-100 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 group hover:scale-101 ${social.color}`}
                   >
-                    <social.icon className="w-6 h-6 mr-4" />
+                    <social.icon className="w-6 h-6 " />
                     <div>
-                      <span className="font-medium text-lg">{social.name}</span>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{social.description}</p>
+                      {/* <span className="font-medium text-lg">{social.name}</span> */}
+                      {/* <p className="text-sm text-gray-500 dark:text-gray-400">{social.description}</p> */}
                     </div>
                   </a>
                 ))}
@@ -394,20 +394,22 @@ export default function ContactPage() {
             </div> */}
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-white text-center hover:scale-105 transition-transform duration-300">
+            
+          </div>
+          
+        </div>. 
+        <div className="bg-gradient-to-r from-yellow-100 to-green-100 rounded-2xl p-8 text-gray-600 text-center hover:scale-101 transition-transform duration-300">
               <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
               <p className="mb-6 opacity-90">
                 Whether you have a clear vision or just an idea, I'm here to help bring your project to life.
               </p>
-              <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100" asChild>
+              <Button variant="secondary" className="bg-white text-green-800 hover:bg-gray-100" asChild>
                 <a href="mailto:janavi.chauhan@email.com">
                   <Mail className="w-5 h-5 mr-2" />
                   Start a Conversation
                 </a>
               </Button>
-            </div>
-          </div>
-        </div>
+            </div>.                      
       </div>
     </div>
   )

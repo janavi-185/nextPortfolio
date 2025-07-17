@@ -110,7 +110,7 @@ export default function AboutPage() {
                 <p className="text-yellow-300 dark:text-yellow-400 font-medium">Science Stream (PCM )</p>
                 <p className="text-gray-600 dark:text-gray-400">2021-2023</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                  Percentage: 92% • Strong foundation in Mathematics, Physics, Chemistry.
+                  Percentile: 82 • Strong foundation in Mathematics, Physics, Chemistry.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
             {certifications.map((cert, index) => (
               <div
                 key={cert.title}
-                className="flex flex-col p-6 bg-gradient-to-br from-yellow-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:scale-105 transition-transform duration-300 border border-pink-100 dark:border-gray-600"
+                className="flex flex-col p-6 bg-gradient-to-br from-yellow-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:scale-101 transition-transform duration-300 border border-green-100 dark:border-gray-600"
               >
                 <div className="flex items-center mb-3">
                   <cert.icon className="w-6 h-6 text-green-600 mr-2" />
