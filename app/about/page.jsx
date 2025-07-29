@@ -2,23 +2,37 @@
 
 import { Code,  Award, BookOpen, User, Heart } from 'lucide-react'
 import { skills, certifications, interests } from '@/lib/data'
+import { motion } from 'framer-motion'
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 animate-fadeInUp">
+        <div className="text-start mb-16 animate-fadeInUp">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-format text-transparent">About Me</span>
+            <motion.span className="text-format text-transparent"
+            animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "linear",
+              }}
+              style={{
+                backgroundSize: "200% 200%",
+              }}
+            ># About Me
+            </motion.span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-left text-lg text-gray-600 dark:text-gray-300 mx-auto leading-relaxed">
             Get to know more about my journey, skills, and passion for technology
           </p>
         </div>
 
         {/* Personal Introduction */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl mb-12 animate-fadeInUp">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl mb-12 ">
           <div className="flex items-center mb-6">
             <User className="w-8 h-8 text-green-800 mr-3" />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Who I Am</h2>
@@ -144,7 +158,7 @@ export default function AboutPage() {
         </div>
 
         {/* Interests & Hobbies */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl animate-fadeInUp hover:shadow-2xl transition-shadow duration-300">
+        {/* <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl animate-fadeInUp hover:shadow-2xl transition-shadow duration-300">
           <div className="flex items-center mb-6">
             <Heart className="w-8 h-8 text-green-800 mr-3" />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Interests & Hobbies</h2>
@@ -162,7 +176,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

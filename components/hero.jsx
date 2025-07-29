@@ -4,22 +4,14 @@ import { useRef } from "react"
 import {  Github, Linkedin, Instagram } from "lucide-react"
 import  {Button}  from "@/components/ui/button"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function Hero() {
+  console.log("Hero component rendered")
   const heroRef = useRef(null)
   const textRef = useRef(null)
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline()
 
-  //   tl.from(textRef.current.children, {
-  //     y: 100,x
-  //     opacity: 1,
-  //     duration: 1,
-  //     stagger: 0.2,
-  //     ease: "power3.out",
-  //   })
-  // }, [])
 
   const scrollToAbout = () => {
     document.querySelector("#about").scrollIntoView({ behavior: "smooth" })
@@ -27,8 +19,19 @@ export default function Hero() {
 
   return (
     <section ref={heroRef} className="h-full flex items-center justify-center">
+      {/* <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/80 via-yellow-50/60 to-orange-50/40 dark:from-black dark:via-amber-950/30 dark:to-yellow-950/20" />
+        <div className="absolute top-1/4 left-1/5 w-96 h-96 bg-green-400/30 dark:bg-yellow-500/12 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-400/25 dark:bg-yellow-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 right-1/2 w-64 h-64 bg-yellow-400/20 dark:bg-amber-400/8 rounded-full blur-3xl animate-pulse delay-500" />
+      </div> */}
       
-      <div className="w-[90%]">
+      <motion.div 
+      className="w-[90%] z-10"
+      initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
         <div ref={textRef}>
           {/* <motion.div
             initial={{ scale: 0 }}
@@ -59,7 +62,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-24">
             <Button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-[#437057] to-[#97B067] hover:cursor-pointer text-white px-8 py-4 border hover:border-green-800 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-[#437057] to-[#97B067] py-6 hover:cursor-pointer text-white px-8  border hover:border-green-800 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Explore My Work
             </Button>
@@ -67,12 +70,12 @@ export default function Hero() {
 
             <div className="flex space-x-4">
               <Link
-                whileHover={{ scale: 1.1 }}
+                // whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://github.com/janavi-185"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
+                className="p-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-700 transition-colors"
               >
                 <Github className="w-6 h-6" />
               </Link>
@@ -82,7 +85,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/janavi-chauhan-87a611283/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
+                className="p-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-700 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </Link>
@@ -92,7 +95,7 @@ export default function Hero() {
                 href="https://www.instagram.com/_janavi.18/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-600 transition-colors"
+                className="p-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-green-700 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
               </Link>
@@ -108,7 +111,7 @@ export default function Hero() {
             <ArrowDown className="w-8 h-8 mx-auto text-pink-500 dark:text-pink-400" />
           </motion.div> */}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

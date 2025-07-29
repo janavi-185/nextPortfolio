@@ -43,11 +43,11 @@ export default function ProjectsPage() {
     <div className="min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 animate-fadeInUp">
+        <div className="text-left mb-16 animate-fadeInUp">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-format text-transparent">My Projects</span>
+            <span className="text-format text-transparent"># My Projects</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-300  mx-auto leading-relaxed">
             A showcase of my development journey, featuring web applications, mobile apps, and full-stack solutions 
             that demonstrate my technical skills and creative problem-solving abilities.
           </p>

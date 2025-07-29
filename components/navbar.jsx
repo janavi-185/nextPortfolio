@@ -32,7 +32,7 @@ export default function Navbar() {
   if (!mounted) return null
 
   return (
-    <nav className="fixed top-2 left-10 h-17 right-10 z-40 rounded-2xl bg-dark/65 dark:bg-dark/65 backdrop-blur-md border border-gray-300 dark:border-gray-500 animate-slideDown">
+    <nav className="fixed left-10 h-17 right-10 z-40 bg-dark/65 dark:bg-dark/65 backdrop-blur-md border-b border-gray-300 dark:border-gray-500 animate-slideDown">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -43,8 +43,8 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden w-full md:block  ">
+            <div className="flex justify-end-safe space-x-4 ">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -61,16 +61,16 @@ export default function Navbar() {
           </div>
 
           {/* Theme Toggle & Mobile Menu */}
-          <div className="flex items-center hover:cursor-pointer space-x-2">
-            <Button
+          <div className="flex items-center  space-x-2">
+            {/* <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "light")}
-              className="text-gray-700 dark:text-gray-300"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-gray-700 m-2 cursor-pointer dark:text-gray-300"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               {console.log("Theme toggled to:", theme)}
-            </Button>
+            </Button> */}
 
             {/* Mobile menu button */}
             <div className="md:hidden">

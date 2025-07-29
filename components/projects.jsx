@@ -7,6 +7,7 @@ import { ExternalLink, Github, Code, Palette, Database } from "lucide-react"
 import {Button} from "@/components/ui/button"
 
 export default function Projects() {
+  console.log("Projects component rendered")
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
