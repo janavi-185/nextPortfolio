@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Projects() {
   const projects = [
@@ -13,48 +14,50 @@ export default function Projects() {
       description: 'Algorithm visualization platform that visual representation of problem-solving techniques.',
       tags: ['Nextjs', 'Tailwind', 'TypeScript'],
       link: 'https://algo-viz-black.vercel.app/',
-      image: '🛍️',
+      image: '/image.png',
     },
-    {
-      id: 2,
-      title: 'Task Management App',
-      description: 'Collaborative task management tool with real-time updates and team collaboration features.',
-      tags: ['Next.js', 'TypeScript', 'Tailwind', 'Firebase'],
-      link: '#',
-      image: '✓',
-    },
-    {
-      id: 3,
-      title: 'Analytics Dashboard',
-      description: 'Data visualization dashboard with real-time analytics and custom reporting capabilities.',
-      tags: ['React', 'D3.js', 'Express', 'MongoDB'],
-      link: '#',
-      image: '📊',
-    },
-    {
-      id: 4,
-      title: 'Social Network',
-      description: 'Social platform with real-time messaging, notifications, and user engagement features.',
-      tags: ['Next.js', 'WebSocket', 'PostgreSQL', 'Redis'],
-      link: '#',
-      image: '👥',
-    },
-    {
-      id: 5,
-      title: 'Content Management System',
-      description: 'Headless CMS with powerful content management and API-first architecture.',
-      tags: ['TypeScript', 'Node.js', 'GraphQL', 'MongoDB'],
-      link: '#',
-      image: '📝',
-    },
-    {
-      id: 6,
-      title: 'AI Chat Application',
-      description: 'AI-powered chat application with natural language processing and intelligent responses.',
-      tags: ['Next.js', 'OpenAI API', 'Python', 'FastAPI'],
-      link: '#',
-      image: '🤖',
-    },
+    // {
+    //   id: 2,
+    //   title: 'Task Management App',
+    //   description: 'Collaborative task management tool with real-time updates and team collaboration features.',
+    //   tags: ['Next.js', 'TypeScript', 'Tailwind', 'Firebase'],
+    //   link: '#',
+    //   image: '✓',
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Analytics Dashboard',
+    //   description: 'Data visualization dashboard with real-time analytics and custom reporting capabilities.',
+    //   tags: ['React', 'D3.js', 'Express', 'MongoDB'],
+    //   link: '#',
+    //   image: '📊',
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Social Network',
+    //   description: 'Social platform with real-time messaging, notifications, and user engagement features.',
+    //   tags: ['Next.js', 'WebSocket', 'PostgreSQL', 'Redis'],
+    //   link: '#',
+    //   image: '👥',
+    // },
+    // {
+    //   id: 5,
+    //   title: 'Content Management System',
+    //   description: 'Headless CMS with powerful content management and API-first architecture.',
+    //   tags: ['TypeScript', 'Node.js', 'GraphQL', 'MongoDB'],
+    //   link: '#',
+    //   image: '📝',
+    // },
+    // {
+    //   id: 6,
+    //   title: 'AI Chat Application',
+    //   description: 'AI-powered chat application with natural language processing and intelligent responses.',
+    //   tags: ['Next.js', 'OpenAI API', 'Python', 'FastAPI'],
+    //   link: '#',
+    //   image: '🤖',
+    // },
+
+
   ]
 
   return (
@@ -70,8 +73,14 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {projects.map((project) => (
             <div key={project.id} className="p-6 rounded-sm border hover:border-primary/30 transition-shadow">
-              <div className="bg-primary/10 rounded-sm h-48 flex items-center justify-center mb-4">
-                <p className="text-6xl">{project.image}</p>
+              <div className="bg-secondary/10 rounded-sm h-48 flex items-center justify-center mb-4">
+              <Image 
+                src={project.image}
+                alt={project.title}
+                width={415}
+                height={200}
+                className="object-contain"
+              />
               </div>
               
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -91,6 +100,8 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        <h1 className='text-center text-xl text-chart-4'>WILL ADD MORE PROJECTS!!</h1>
       </section>
     </main>
   )

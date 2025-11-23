@@ -42,7 +42,7 @@ export default function About() {
             </div>
           </div>
           <Link href='/JanaviResume.pdf' target='_blank'  >
-            <Button className='cursor-pointer hover:bg-accent/40 bg-transparent border-2 rounded-full py-6 text-primary ' >
+            <Button className='cursor-pointer hover:bg-accent/20 bg-transparent border-2 rounded-full py-6 text-primary ' >
               My Resume {'- >'}
             </Button>
           </Link>

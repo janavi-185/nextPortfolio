@@ -10,6 +10,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
+    subject: '',
     email: '',
     message: '',
   })
@@ -42,7 +43,7 @@ export default function Contact() {
     e.preventDefault()
     console.log('Form submitted:', formData)
     alert('Thank you for your message! I\'ll get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
+    setFormData({ name: '', subject: '' , email: '', message: '' })
   }
   
 
@@ -56,21 +57,38 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="gap-12">
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  required
-                />
+
+              <div className='grid grid-cols-2 gap-3'>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    Name
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2"> 
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject here"
+                    required
+                  />
+                </div>
               </div>
 
               <div>
@@ -103,63 +121,14 @@ export default function Contact() {
                 />
               </div>
 
-              <Button type="submit" onClick={handleSend} size="lg" className="w-full cursor-pointer">
+              <Button type="submit" onClick={handleSend}  className="hover:bg-accent/20 bg-transparent border border-input rounded-sm py-6 text-foreground hover:text-primary cursor-pointer">
                 Send Message
               </Button>
             </form>
           </div>
 
-          <div className="space-y-6">
-            <Card className="p-6 rounded-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <a
-                    href="mailto:hello@example.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    chauhanjanavi06@gamil.com
-                  </a>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 rounded-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Phone</h3>
-                  <a
-                    href="tel:+1234567890"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +91 6354939816
-                  </a>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 rounded-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Location</h3>
-                  <p className="text-muted-foreground">
-                    Ahmedabad, Gujarat, India
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            {/* Social Links */}
-            <div className="pt-4">
+           
+            <div className="pt-7">
               <h3 className="font-semibold mb-4">Follow Me</h3>
               <div className="flex gap-4">
                 <a href="https://github.com/janavi-185" className="text-muted-foreground hover:text-primary transition-colors">
@@ -173,7 +142,6 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-          </div>
         </div>
       </section>
     </main>
