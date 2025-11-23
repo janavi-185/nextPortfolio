@@ -53,7 +53,7 @@ export default function About() {
             {skills.map((skillGroup) => (
               <div key={skillGroup.category} className="border rounded-sm p-6 hover:border-secondary">
                 <h3 className="text-lg font-semibold mb-4 text-primary">{skillGroup.category}</h3>
-                <ul className="space-y-2 flex">
+                <ul className="space-y-2 flex flex-wrap">
                   {skillGroup.items.map((skill) => (
                     <li key={skill} className="text-muted-foreground border m-1 p-2 w-fit">
                       ✓ {skill}
