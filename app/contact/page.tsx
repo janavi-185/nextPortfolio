@@ -21,7 +21,6 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
     console.log('Form submitted:', formData)
     alert('Thank you for your message! I\'ll get back to you soon.')
     setFormData({ name: '', email: '', message: '' })
@@ -29,7 +28,7 @@ export default function Contact() {
 
   return (
     <main className="flex-1">
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="mb-12 border-b border-border pb-8 ">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">Get In Touch</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
