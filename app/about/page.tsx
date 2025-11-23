@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default function About() {
   const skills = [
@@ -12,7 +13,7 @@ export default function About() {
   return (
     <main className="flex-1">
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 ">
-        <div className="mb-12">
+        <div className="mb-12 border-b border-border pb-8 ">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">about</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
 
@@ -33,16 +34,18 @@ export default function About() {
           </div>
 
           <div>
-            <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg h-96 flex items-center justify-center">
+            <div className="bg-linear-to-br from-primary/20 to-accent/20 rounded-lg h-96 flex items-center justify-center">
               <div className="text-center">
                 <p className="text-6xl mb-2">👨‍💻</p>
                 <p className="text-muted-foreground">Your awesome photo here</p>
               </div>
             </div>
           </div>
-          <Button className='cursor-pointer rounded-sm' >
-            My Resume {'- >'}
-          </Button>
+          <Link href='/JanaviResume.pdf' target='_blank'  >
+            <Button className='cursor-pointer hover:bg-accent/40 bg-transparent border-2 rounded-full py-6 text-primary ' >
+              My Resume {'- >'}
+            </Button>
+          </Link>
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-8">Skills & Expertise</h2>
@@ -67,7 +70,7 @@ export default function About() {
             <h2 className="text-2xl font-bold">Education</h2>
           </div>
           <div className="space-y-6">
-            <div className="border-l-2 border-primary pl-6 p-4 rounded-r-sm hover:bg-secondary/20 transition-colors">
+            <div className="border-l-2 border-primary pl-6 p-4 rounded-r-sm ">
               <p className="font-semibold text-foreground">B.Tech - Adani University</p>
               <p className="text-primary font-medium">Computer Science Engineering (AI - ML)</p>
               <p className="text-muted-foreground">3rd Year • 2023-2027</p>
@@ -86,7 +89,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="border-l-4 border-secondary pl-6 p-4 rounded-r-sm hover:bg-secondary/20 transition-colors">
+            <div className="border-l-4 border-secondary pl-6 p-4 rounded-r-sm ">
               <h3 className="text-lg font-semibold">Higher Secondary Education</h3>
               <p className="text-muted-foreground font-medium">Diwan Ballubhai Madhyamik Shala</p>
               <p className="text-muted-foreground font-medium">Science Stream (PCM)</p>

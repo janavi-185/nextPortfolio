@@ -9,10 +9,10 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform with real-time inventory management and payment integration.',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      link: '#',
+      title: 'AlgoViz',
+      description: 'Algorithm visualization platform that visual representation of problem-solving techniques.',
+      tags: ['Nextjs', 'Tailwind', 'TypeScript'],
+      link: 'https://algo-viz-black.vercel.app/',
       image: '🛍️',
     },
     {
@@ -69,7 +69,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {projects.map((project) => (
-            <div key={project.id} className="p-6 rounded-sm border hover:border-secondary transition-shadow">
+            <div key={project.id} className="p-6 rounded-sm border hover:border-primary/30 transition-shadow">
               <div className="bg-primary/10 rounded-sm h-48 flex items-center justify-center mb-4">
                 <p className="text-6xl">{project.image}</p>
               </div>
@@ -85,7 +85,7 @@ export default function Projects() {
                 ))}
               </div>
               
-              <Link href={project.link} className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all">
+              <Link href={project.link}  className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all" target='_blank'>
                 View Project <ExternalLink className="w-4 h-4" />
               </Link>
             </div>

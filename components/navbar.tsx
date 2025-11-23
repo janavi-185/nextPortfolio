@@ -23,20 +23,22 @@ export function Navbar() {
       left: 60,
       right: 60,
       borderRadius: 40,
-      boxShadow: "0 8px 24px rgba(15, 23, 42, 0.12)",
+      border: "1px solid var(--border)",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
       paddingLeft: 16,
       paddingRight: 16,
-      transition: { duration: 0.28, ease: "easeInOut" },
+      transition: { duration: 0.28, ease: [0.42, 0, 0.58, 1] },
     },
     normal: {
       top: 0,
       left: 0,
       right: 0,
       borderRadius: 0,
+      
       boxShadow: "0 0px 0px rgba(0,0,0,0)",
       paddingLeft: 0,
       paddingRight: 0,
-      transition: { duration: 0.28, ease: "easeInOut" },
+      transition: { duration: 0.28, ease: [0.42, 0, 0.58, 1] },
     },
   }
 
@@ -73,9 +75,9 @@ export function Navbar() {
         zIndex: 50,
 
       }}
-      className="border-b border-border bg-background/80 backdrop-blur-sm"
+      className="border-b border-border max-w-6xl mx-auto bg-background/80 backdrop-blur-sm"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-bold text-primary">
             JC

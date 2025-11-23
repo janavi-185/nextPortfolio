@@ -14,6 +14,25 @@ export default function Contact() {
     message: '',
   })
 
+  const handleSend = () => {
+  const recipient = "chauhanjanavi06@gmail.com"; // your email
+  const subject = `Portfolio Contact - Message from ${formData.name}`;
+  const body = `
+    Name: ${formData.name}
+    Email: ${formData.email}
+
+    Message:
+    ${formData.message}
+      `;
+
+      const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+        recipient
+      )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.open(gmailURL, "_blank");
+    };
+
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
@@ -25,6 +44,7 @@ export default function Contact() {
     alert('Thank you for your message! I\'ll get back to you soon.')
     setFormData({ name: '', email: '', message: '' })
   }
+  
 
   return (
     <main className="flex-1">
@@ -83,13 +103,12 @@ export default function Contact() {
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full cursor-pointer">
+              <Button type="submit" onClick={handleSend} size="lg" className="w-full cursor-pointer">
                 Send Message
               </Button>
             </form>
           </div>
 
-          {/* Contact Information */}
           <div className="space-y-6">
             <Card className="p-6 rounded-sm">
               <div className="flex gap-4">
