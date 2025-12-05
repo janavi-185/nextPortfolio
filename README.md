@@ -4,10 +4,6 @@
   A clean, modern, and responsive developer portfolio built with <b>Next.js</b> and <b>TypeScript</b>.
 </p>
 
----
-
-## 📸 Preview  
-(Add your screenshot here – optional)
 
 ---
 
@@ -18,7 +14,7 @@
 | **Next.js** | React framework for fast & scalable web apps |
 | **TypeScript** | Type-safe, clean, and maintainable code |
 | **Tailwind CSS** | Utility-first CSS for modern UI |
-| **Framer Motion** (optional) | Smooth animations & transitions |
+| **Framer Motion**  | Smooth animations & transitions |
 | **Vercel** | Deployment and hosting |
 
 ---
@@ -27,10 +23,10 @@
 
 - 🌟 Fully responsive & modern UI  
 - ⚡ Built with Next.js App Router  
-- 🎭 Smooth animations (if added)  
+- 🎭 Smooth animations  
 - 🧩 Reusable, clean components  
-- 📄 Dedicated pages for Projects, Skills, About, and Contact  
-- 🌓 Dark / Light mode support (optional)  
+- 📄 Dedicated pages for Projects, About, and Contact  
+- 🌓 Dark / Light mode support   
 - 🚀 Optimized images & fast loading  
 
 ---
