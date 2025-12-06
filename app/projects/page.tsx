@@ -14,7 +14,7 @@ export default function Projects() {
       description: 'Algorithm visualization platform that visual representation of problem-solving techniques.',
       tags: ['Nextjs', 'Tailwind', 'TypeScript'],
       link: 'https://algo-viz-black.vercel.app/',
-      image: '/image.png',
+      image: '/AlgoViz.png',
     },
     // {
     //   id: 2,
@@ -73,13 +73,12 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {projects.map((project) => (
             <div key={project.id} className="p-6 rounded-sm border hover:border-primary/30 transition-shadow">
-              <div className="bg-secondary/10 rounded-sm h-48 flex items-center justify-center mb-4">
+              <div className="bg-secondary/90 rounded-sm h-48 flex items-center justify-center mb-4 relative overflow-hidden">
               <Image 
                 src={project.image}
                 alt={project.title}
-                width={415}
-                height={200}
-                className="object-contain"
+                fill
+                className="object-cover"
               />
               </div>
               

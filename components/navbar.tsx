@@ -101,11 +101,11 @@ export function Navbar() {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 cursor-pointer rounded-full hover:bg-gray-100"
+                className="p-2 cursor-pointer rounded-full hover:text-primary"
                 aria-label="Toggle menu"
               >
                 <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  {isOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
+                  {isOpen ? <X className="w-6 h-6 text-gray-500" /> : <Menu className="w-6 h-6 text-gray-500" />}
                 </motion.div>
               </Button>
             </div>
