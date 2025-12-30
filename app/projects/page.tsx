@@ -16,14 +16,14 @@ export default function Projects() {
       link: 'https://algo-viz-black.vercel.app/',
       image: '/AlgoViz.png',
     },
-    // {
-    //   id: 2,
-    //   title: 'Task Management App',
-    //   description: 'Collaborative task management tool with real-time updates and team collaboration features.',
-    //   tags: ['Next.js', 'TypeScript', 'Tailwind', 'Firebase'],
-    //   link: '#',
-    //   image: '✓',
-    // },
+    {
+      id: 2,
+      title: 'Vizta',
+      description: 'A social media app focused on sharing images, discovering content, and connecting with people. ',
+      tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
+      link: 'https://vizta-weld.vercel.app/',
+      image: '/Vizta.png',
+    },
     // {
     //   id: 3,
     //   title: 'Analytics Dashboard',

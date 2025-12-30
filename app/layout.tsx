@@ -4,8 +4,8 @@ import { Analytics } from '@vercel/analytics/next'
 // @ts-ignore: side-effect import for global CSS (no type declarations)
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
+import { Navbar } from '@/components/shared/navbar'
+import { Footer } from '@/components/shared/footer'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });

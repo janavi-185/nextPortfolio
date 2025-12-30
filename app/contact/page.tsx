@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Card } from '@/components/ui/card'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { contact } from '@/constants'
+
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -131,15 +131,14 @@ export default function Contact() {
             <div className="pt-7">
               <h3 className="font-semibold mb-4">Follow Me</h3>
               <div className="flex gap-4">
-                <a href="https://github.com/janavi-185" className="text-muted-foreground hover:text-primary transition-colors">
-                  GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/janavi-chauhan-87a611283/" className="text-muted-foreground hover:text-primary transition-colors">
-                  LinkedIn
-                </a>
-                <a href="https://x.com/_janavi_18" className="text-muted-foreground hover:text-primary transition-colors">
-                  Twitter
-                </a>
+                {contact.map((item) => {
+                  const Icon = item.icon
+                  return(
+                    <a key={item.label} href={item.href} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                      <Icon />
+                    </a>
+                )
+                })}
               </div>
             </div>
         </div>

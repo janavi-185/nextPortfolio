@@ -2,22 +2,15 @@
 
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { skills } from '@/constants'
 
 export default function About() {
-  const skills = [
-    { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB'] },
-    { category: 'Tools', items: ['Git', 'AWS', 'Vercel', 'Figma'] },
-  ]
-
   return (
     <main className="flex-1">
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 ">
         <div className="mb-12 border-b border-border pb-8 ">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">about</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-
-
             knowing more about me...
           </p>
         </div>
