@@ -6,6 +6,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/shared/navbar'
 import { Footer } from '@/components/shared/footer'
+import { ShootingStars } from '@/components/shared/shooting-stars'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased transition-all duration-300 ease-in-out`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
+          <ShootingStars />
           {children}
           <Footer />
         </ThemeProvider>
