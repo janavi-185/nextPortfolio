@@ -38,7 +38,7 @@ export default function About() {
 
         {/* Story + Photo */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-16"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -46,10 +46,10 @@ export default function About() {
           <motion.div variants={itemVariants}>
             <h2 className="text-2xl font-bold mb-4">My Story</h2>
             <p className="text-muted-foreground mb-4">
-              From a young age, I was fascinated by technology and its potential to transform lives. This curiosity led me to pursue a career in software development, where I have honed my skills in both frontend and backend technologies.
+              Hey Visitor, I&apos;m Janavi, a passionate software developer with a love for building things that make a difference. I started coding in College 2nd year and ofcourse, It was tough at the begining, while everyone had some experience.. there i was trying to fit in the world of programming. But with persistence and a lot of late nights with cup of tea I made it !
             </p>
             <p className="text-muted-foreground">
-              My focus is on creating clean, scalable code and intuitive user interfaces. I believe great design and solid engineering should go hand-in-hand to create experiences that users love.
+              Till now i have worked on a variety of projects, from small web apps to larger, more complex systems. Each project has been a learning experience. I&apos;m always looking for new opportunities to learn and grow, and I can&apos;t wait to see what the future holds!
             </p>
           </motion.div>
 
@@ -57,7 +57,7 @@ export default function About() {
             <div className="bg-linear-to-br from-primary/20 to-accent/20 rounded-lg h-72 flex items-center justify-center relative overflow-hidden">
               <div className="text-center">
                 <p className="text-6xl mb-2">👩‍💻</p>
-                <p className="text-muted-foreground text-sm">Your awesome photo here</p>
+                {/* <p className="text-muted-foreground text-sm">Your awesome photo here</p> */}
               </div>
             </div>
           </motion.div>
@@ -130,7 +130,7 @@ export default function About() {
               <p className="text-primary font-medium">Computer Science Engineering (AI - ML)</p>
               <p className="text-muted-foreground">3rd Year • 2023-2027</p>
               <p className="text-sm text-muted-foreground mt-2">
-                CGPA: 7.5/10 • Focusing on software development, data structures, algorithms, and web technologies.
+                CGPA: 7.7/10 • Focusing on software development, data structures, algorithms, and web technologies.
               </p>
               <div className="mt-3">
                 <p className="text-sm font-medium mb-2">Key Subjects:</p>
