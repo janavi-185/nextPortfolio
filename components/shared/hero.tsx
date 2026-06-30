@@ -27,13 +27,13 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-12 sm:px-13 lg:px-8">
       <motion.div
-        className="max-w-2xl mx-auto"
+        className="max-w-4xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Badge */}
-        <motion.div className="mb-6 inline-block" variants={itemVariants}>
+        <motion.div className="mb-6 flex justify-center w-full" variants={itemVariants}>
           <motion.span
             className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
             whileHover={{ scale: 1.05 }}
@@ -43,17 +43,25 @@ const Hero = () => {
         </motion.div>
 
         {/* Heading */}
+        {/* Heading */}
         <motion.h1
-          className="text-5xl sm:text-6xl font-bold mb-6 text-pretty"
+          className="font-bold mb-6 text-pretty"
           variants={itemVariants}
         >
-          hi, I&apos;m{' '}
-          <span className="text-primary">Janavi</span>
+          <motion.span
+            className="relative z-10 inline-block px-4 py-1.5 -ml-6 sm:-ml-9 translate-y-3 sm:translate-y-5 bg-secondary/10 text-secondary rounded-xl text-2xl md:text-4xl font-semibold -rotate-15"
+            whileHover={{ rotate: -3, scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            hi, I&apos;m
+          </motion.span>
+          <br />
+          <span className="text-4xl sm:text-8xl text-primary">Janavi Chauhan</span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl sm:text-lg text-muted-foreground"
+          className="text-xl sm:text-3xl text-secondary"
           variants={itemVariants}
         >
           B.Tech Student &amp; Aspiring Developer
@@ -61,10 +69,10 @@ const Hero = () => {
 
         {/* Description */}
         <motion.p
-          className="text-lg sm:text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto mt-2"
+          className="text-lg sm:text-xl text-muted-foreground my-4"
           variants={itemVariants}
         >
-          I create beautiful, functional web experiences that help businesses grow. Specialized in modern web technologies and user-centric design.
+          I create beautiful, functional web and app experiences while exploring new technologies and building impactful projects.
         </motion.p>
 
         {/* CTA Buttons */}

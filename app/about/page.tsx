@@ -1,131 +1,109 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { skills } from '@/constants'
-import { motion } from 'framer-motion'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1 },
-  },
-}
+gsap.registerPlugin(ScrollTrigger)
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
-  },
+const fadeUp = (el: Element | null, delay = 0) => {
+  if (!el) return
+  gsap.fromTo(el,
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1, y: 0, duration: 0.6, delay, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+    }
+  )
 }
 
 export default function About() {
+  const headerRef    = useRef<HTMLDivElement>(null)
+  const storyRef     = useRef<HTMLDivElement>(null)
+  const skillsRef    = useRef<HTMLDivElement>(null)
+  const educationRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      fadeUp(headerRef.current)
+      fadeUp(storyRef.current,  0.1)
+      fadeUp(skillsRef.current, 0.1)
+      fadeUp(educationRef.current, 0.1)
+    })
+    return () => ctx.revert()
+  }, [])
+
   return (
     <main className="flex-1">
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
         {/* Header */}
-        <motion.div
-          className="mb-12 border-b border-border pb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div ref={headerRef} className="mb-12 border-b border-border pb-8" style={{ opacity: 0 }}>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">about</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">knowing more about me...</p>
-        </motion.div>
+        </div>
 
         {/* Story + Photo */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={itemVariants}>
-            <h2 className="text-2xl font-bold mb-4">My Story</h2>
+        <div ref={storyRef} className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-16" style={{ opacity: 0 }}>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">WHO AM I--</h2>
             <p className="text-muted-foreground mb-4">
               Hey Visitor, I&apos;m Janavi, a passionate software developer with a love for building things that make a difference. I started coding in College 2nd year and ofcourse, It was tough at the begining, while everyone had some experience.. there i was trying to fit in the world of programming. But with persistence and a lot of late nights with cup of tea I made it !
             </p>
             <p className="text-muted-foreground">
               Till now i have worked on a variety of projects, from small web apps to larger, more complex systems. Each project has been a learning experience. I&apos;m always looking for new opportunities to learn and grow, and I can&apos;t wait to see what the future holds!
             </p>
-          </motion.div>
+            <div className="mt-6">
+              <Link href="/Janavi'sResume.pdf" target="_blank">
+                <Button className="cursor-pointer hover:bg-accent/20 bg-transparent border-2 rounded-full py-6 text-primary">
+                  My Resume {'->'}
+                </Button>
+              </Link>
+            </div>
+          </div>
 
-          <motion.div variants={itemVariants}>
+          <div>
             <div className="bg-linear-to-br from-primary/20 to-accent/20 rounded-lg h-72 flex items-center justify-center relative overflow-hidden">
               <div className="text-center">
                 <p className="text-6xl mb-2">👩‍💻</p>
-                {/* <p className="text-muted-foreground text-sm">Your awesome photo here</p> */}
               </div>
             </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <Link href="/Janavi'sResume.pdf" target="_blank">
-              <Button className="cursor-pointer hover:bg-accent/20 bg-transparent border-2 rounded-full py-6 text-primary">
-                My Resume {'->'}
-              </Button>
-            </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div ref={skillsRef} style={{ opacity: 0 }}>
           <h2 className="text-2xl font-bold mb-8">Skills &amp; Expertise</h2>
-          <motion.div
-            className="grid grid-cols-1 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="grid grid-cols-1 gap-6">
             {skills.map((skillGroup) => (
-              <motion.div
+              <div
                 key={skillGroup.category}
-                variants={itemVariants}
-                whileHover={{ borderColor: 'var(--primary)', transition: { duration: 0.2 } }}
-                className="border rounded-sm p-6 transition-colors duration-200"
+                className="border rounded-sm p-6 transition-colors duration-200 hover:border-primary"
               >
                 <h3 className="text-lg font-semibold mb-4 text-primary">{skillGroup.category}</h3>
                 <ul className="space-y-2 flex flex-wrap">
-                  {skillGroup.items.map((skill, i) => (
-                    <motion.li
+                  {skillGroup.items.map((skill) => (
+                    <li
                       key={skill}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.3 + i * 0.06, duration: 0.35 }}
-                      whileHover={{ scale: 1.05 }}
                       className="text-muted-foreground border m-1 p-2 w-fit cursor-default"
                     >
                       ✓ {skill}
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Education */}
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="flex items-center mb-8">
-            <h2 className="text-2xl font-bold">Education</h2>
-          </div>
+        <div ref={educationRef} className="mt-16" style={{ opacity: 0 }}>
+          <h2 className="text-2xl font-bold mb-8">Education</h2>
           <div className="space-y-6">
-            <motion.div
-              // whileHover={{ x: 4, transition: { duration: 0.2 } }}
-              className="border-l-2 border-primary pl-6 p-4 rounded-r-sm"
-            >
+            <div className="border-l-2 border-primary pl-6 p-4 rounded-r-sm">
               <p className="font-semibold text-foreground">B.Tech - Adani University</p>
               <p className="text-primary font-medium">Computer Science Engineering (AI - ML)</p>
               <p className="text-muted-foreground">3rd Year • 2023-2027</p>
@@ -147,12 +125,9 @@ export default function About() {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              // whileHover={{ x: 4, transition: { duration: 0.2 } }}  
-              className="border-l-4 border-secondary pl-6 p-4 rounded-r-sm"
-            >
+            <div className="border-l-4 border-secondary pl-6 p-4 rounded-r-sm">
               <h3 className="text-lg font-semibold">Higher Secondary Education</h3>
               <p className="text-muted-foreground font-medium">Diwan Ballubhai Madhyamik Shala</p>
               <p className="text-muted-foreground font-medium">Science Stream (PCM)</p>
@@ -160,9 +135,10 @@ export default function About() {
               <p className="text-sm text-muted-foreground mt-2">
                 Percentile: 82 • Strong foundation in Mathematics, Physics, Chemistry.
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
+
       </section>
     </main>
   )
