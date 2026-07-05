@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { Github, Code2, Terminal } from 'lucide-react'
 import { skills } from '@/constants'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -25,6 +27,7 @@ export default function About() {
   const storyRef     = useRef<HTMLDivElement>(null)
   const skillsRef    = useRef<HTMLDivElement>(null)
   const educationRef = useRef<HTMLDivElement>(null)
+  const profilesRef  = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -32,17 +35,23 @@ export default function About() {
       fadeUp(storyRef.current,  0.1)
       fadeUp(skillsRef.current, 0.1)
       fadeUp(educationRef.current, 0.1)
+      fadeUp(profilesRef.current, 0.1)
     })
     return () => ctx.revert()
   }, [])
 
   return (
-    <main className="flex-1">
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="about" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
         {/* Header */}
         <div ref={headerRef} className="mb-12 border-b border-border pb-8" style={{ opacity: 0 }}>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">about</h1>
+          <motion.h1
+            className="inline-block relative z-10 px-6 py-2 bg-secondary/10 text-secondary rounded-xl text-4xl sm:text-5xl font-bold mb-6 -rotate-3 cursor-default"
+            whileHover={{ rotate: 3, scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            about
+          </motion.h1>
           <p className="text-lg text-muted-foreground max-w-2xl">knowing more about me...</p>
         </div>
 
@@ -139,7 +148,39 @@ export default function About() {
           </div>
         </div>
 
-      </section>
-    </main>
+        {/* Profiles */}
+        <div ref={profilesRef} className="mt-16" style={{ opacity: 0 }}>
+          <h2 className="text-2xl font-bold mb-8">Coding Profiles</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <Link
+              href="https://github.com/janavi-185"
+              target="_blank"
+              className="group flex flex-col items-center justify-center p-8 border border-border rounded-xl bg-card/40 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md"
+            >
+              <Github className="w-10 h-10 mb-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <span className="font-semibold text-lg group-hover:text-primary transition-colors">GitHub</span>
+            </Link>
+            
+            <Link
+              href="https://leetcode.com/u/fpTjjADhu6/"
+              target=""
+              className="group flex flex-col items-center justify-center p-8 border border-border rounded-xl bg-card/40 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md"
+            >
+              <Code2 className="w-10 h-10 mb-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <span className="font-semibold text-lg group-hover:text-primary transition-colors">LeetCode</span>
+            </Link>
+            
+            <Link
+              href="https://codeforces.com/profile/DAISY_18"
+              target="_blank"
+              className="group flex flex-col items-center justify-center p-8 border border-border rounded-xl bg-card/40 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md"
+            >
+              <Terminal className="w-10 h-10 mb-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <span className="font-semibold text-lg group-hover:text-primary transition-colors">Codeforces</span>
+            </Link>
+          </div>
+        </div>
+
+    </section>
   )
 }

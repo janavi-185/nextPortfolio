@@ -60,8 +60,7 @@ export default function Contact() {
   }
 
   return (
-    <main className="flex-1">
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="contact" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <motion.div
           className="mb-12 border-b border-border pb-8"
@@ -69,17 +68,23 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">Get In Touch</h1>
+          <motion.h1
+            className="inline-block relative z-10 px-6 py-2 bg-secondary/10 text-secondary rounded-xl text-4xl sm:text-5xl font-bold mb-6 -rotate-3 cursor-default"
+            whileHover={{ rotate: 3, scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            Get In Touch
+          </motion.h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Have a project in mind? Let&apos;s discuss how I can help bring your ideas to life.
           </p>
         </motion.div>
 
-        <div className="gap-12">
+        <div className="flex w-full gap-12 md:gap-18">
           {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
-            className="space-y-6"
+            className="space-y-6 w-3/4"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -159,13 +164,13 @@ export default function Contact() {
 
           {/* Social Links */}
           <motion.div
-            className="pt-7"
+            className="pt-8 md:pt-0"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h3 className="font-semibold mb-4">Follow Me</h3>
-            <div className="flex gap-4">
+            <h3 className="font-semibold mb-6">lets connect</h3>
+            <div className="flex flex-col gap-4">
               {contact.map((item) => {
                 const Icon = item.icon
                 return (
@@ -174,13 +179,14 @@ export default function Contact() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.2, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="flex flex-col items-center justify-center gap-3 w-32 h-24 border border-border rounded-lg bg-card/40 text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors shadow-sm hover:shadow-md"
+                    // whileHover={{ scale: 1.05, y: -4 }}
+                    // whileTap={{ scale: 0.95 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 15 }}
                     aria-label={item.label}
                   >
-                    <Icon />
+                    <Icon className="w-6 h-6" />
+                    <span className="font-medium text-sm">{item.label}</span>
                   </motion.a>
                 )
               })}
@@ -188,6 +194,5 @@ export default function Contact() {
           </motion.div>
         </div>
       </section>
-    </main>
   )
 }

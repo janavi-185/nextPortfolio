@@ -107,12 +107,17 @@ export default function Projects() {
   }, [])
 
   return (
-    <main className="flex-1">
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="projects" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
         {/* Header */}
         <div ref={headerRef} className="mb-12 border-b border-border pb-8" style={{ opacity: 0 }}>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-pretty">my projects</h1>
+          <motion.h1
+            className="inline-block relative z-10 px-6 py-2 bg-secondary/10 text-secondary rounded-xl text-4xl sm:text-5xl font-bold mb-6 -rotate-3 cursor-default"
+            whileHover={{ rotate: 3, scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            my projects
+          </motion.h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Here are some of the projects I&apos;ve built. Each one taught me something new and helped me grow as a developer.
           </p>
@@ -179,7 +184,6 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
-      </section>
-    </main>
+    </section>
   )
 }

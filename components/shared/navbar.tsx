@@ -1,20 +1,18 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { ThemeToggle } from "./theme-toggle"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
 export function Navbar() {
-  const pathname = usePathname()
+  const [activeSection, setActiveSection] = useState("#home")
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isLargeScreen, setIsLargeScreen] = useState(false)
   const isActive = (href: string) => {
-    return pathname === href
+    return activeSection === href
   }
 
   const navVariants = {
@@ -43,8 +41,22 @@ export function Navbar() {
   }
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50)
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+      
+      const sections = ["home", "about", "projects", "contact"]
+      const currentSections = sections.filter(section => {
+        const el = document.getElementById(section)
+        if (!el) return false
+        const rect = el.getBoundingClientRect()
+        return rect.top <= 200 && rect.bottom >= 200
+      })
+      if (currentSections.length > 0) {
+        setActiveSection(`#${currentSections[0]}`)
+      }
+    }
     window.addEventListener("scroll", handleScroll)
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -59,10 +71,10 @@ export function Navbar() {
   }, [])
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-    { href: "/contact", label: "Contact" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
   ]
 
   return (
@@ -75,28 +87,28 @@ export function Navbar() {
         zIndex: 50,
 
       }}
-      className="border-b border-border max-w-6xl mx-auto bg-background/80 backdrop-blur-sm"
+      className="border-b border-border lg:max-w-4xl mx-auto bg-background/80 backdrop-blur-sm"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            JC
+          <Link href="#home" className="text-2xl font-bold text-primary">
+            JANAVI
           </Link>
-          <div className="hidden md:flex items-center gap-8">
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`text-md font-medium transition-colors ${pathname === href ? "text-primary" : "text-foreground/60 hover:text-foreground"
-                  }`}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
+          <div className="flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-8">
+              {links.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`text-md font-medium transition-colors ${isActive(href) ? "text-primary" : "text-foreground/60 hover:text-foreground"
+                    }`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
 
-          <div className="flex items-center">
-            <div className="md:hidden ">
+            <div className="md:hidden">
               <Button
                 variant="ghost"
                 size="sm"
@@ -109,7 +121,6 @@ export function Navbar() {
                 </motion.div>
               </Button>
             </div>
-            <ThemeToggle />
           </div>
         </div>
         <AnimatePresence>

@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/shared/navbar'
+import { ThemeToggle } from '@/components/shared/theme-toggle'
 import { Footer } from '@/components/shared/footer'
 import { CustomCursor } from '@/components/shared/custom-cursor'
 
@@ -39,10 +40,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${figtree.variable} ${ebGaramond.variable}`}>
       <body className={`font-sans antialiased transition-all duration-300 ease-in-out`}>
         <CustomCursor />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
           {children}
           <Footer />
+          <ThemeToggle />
         </ThemeProvider>
         <Analytics />
       </body>
