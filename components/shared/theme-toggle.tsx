@@ -20,7 +20,7 @@ export function ThemeToggle() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center justify-center">
-      <motion.div 
+      {/* <motion.div 
         className="absolute -top-12 pointer-events-none origin-bottom"
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -28,7 +28,7 @@ export function ThemeToggle() {
         <div className="relative bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1.5 rounded-lg shadow-md after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-transparent after:border-t-secondary">
           check here!!!
         </div>
-      </motion.div>
+      </motion.div> */}
       
       <Button
         variant="outline"

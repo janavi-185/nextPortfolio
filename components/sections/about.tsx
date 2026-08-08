@@ -163,7 +163,7 @@ export default function About() {
             
             <Link
               href="https://leetcode.com/u/fpTjjADhu6/"
-              target=""
+              target="_blank"
               className="group flex flex-col items-center justify-center p-8 border border-border rounded-xl bg-card/40 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md"
             >
               <Code2 className="w-10 h-10 mb-4 text-muted-foreground group-hover:text-primary transition-colors" />

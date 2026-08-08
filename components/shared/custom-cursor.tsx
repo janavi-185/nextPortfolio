@@ -85,9 +85,9 @@ export function CustomCursor() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Clean arrowhead — no tail, just the triangular tip */}
+        {/* Clean arrowhead — standard pointer shape */}
         <path
-          d="M1 1 L18 7 L10 10 L7 18 Z"
+          d="M2 2 L2 18 L7 13 L15 13 Z"
           strokeWidth="1.5"
           strokeLinejoin="round"
           strokeLinecap="round"
